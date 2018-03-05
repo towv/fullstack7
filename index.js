@@ -19,7 +19,7 @@ const extractToken = (request, response, next) => {
   next()
 }
 
-
+app.use(express.static('build'))
 app.use(extractToken)
 app.use(cors())
 app.use(bodyParser.json())
