@@ -4,7 +4,6 @@ const bcrypt = require('bcrypt')
 const User = require('../models/user')
 
 loginRouter.post('/', async (request, response) => {
-  console.log("täällä")
   try {
 
 
