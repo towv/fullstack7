@@ -19,7 +19,6 @@ const extractToken = (request, response, next) => {
   next()
 }
 
-app.use(express.static('build'))
 app.use(extractToken)
 app.use(cors())
 app.use(bodyParser.json())
@@ -40,6 +39,8 @@ server.listen(config.port, () => {
 server.on('close', () => {
   mongoose.connection.close()
 })
+
+app.use(express.static('build'))
 
 module.exports = {
   app, server
